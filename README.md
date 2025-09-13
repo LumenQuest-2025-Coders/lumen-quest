@@ -1,74 +1,82 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# Subscription Management System - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React + Tailwind CSS frontend for a comprehensive subscription management system that integrates with a Python FastAPI backend.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Landing Page**: Hero section with features and call-to-action
+- **Authentication**: Login/Register with role-based routing (Admin/Company/User)
+- **JWT Management**: Secure token storage and API integration
+- **Responsive Design**: Mobile-first Tailwind CSS styling
+- **Role-based Routing**: Different dashboards based on user roles
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+src/
+├── components/          # Reusable UI components
+│   ├── AuthForm.js     # Generic authentication form
+│   ├── Footer.js       # Site footer
+│   ├── Navbar.js       # Navigation bar
+│   └── PlanCard.js     # Subscription plan display
+├── context/            # React context providers
+│   └── AuthContext.js  # Authentication state management
+├── hooks/              # Custom React hooks
+│   └── useAuth.js      # Authentication hook
+├── pages/              # Page components
+│   ├── Landing.js      # Home/landing page
+│   ├── Login.js        # User login
+│   └── Register.js     # User registration
+├── services/           # API integration
+│   └── api.js          # Backend API calls
+└── App.js              # Main application component
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Backend Integration
 
-### `npm test`
+The frontend integrates with all backend modules:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Authentication**: JWT token management
+- **User Management**: Registration, profile updates
+- **Company Management**: Company creation and management
+- **Plan Management**: Subscription plan operations
+- **Subscription Management**: Full subscription lifecycle
+- **Discount Management**: Coupon and discount handling
+- **Analytics**: Revenue and usage analytics
+- **Notifications**: Automated email notifications
 
-### `npm run build`
+## Role-based Routing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Admin**: `/admin/dashboard` - System administration
+- **Company**: `/admin/plans` - Plan management
+- **User**: `/plans` - Plan selection and subscription management
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-### `npm run eject`
+2. Configure environment:
+   ```bash
+   cp .env.example .env
+   # Edit REACT_APP_API_URL to match your backend
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Start development server:
+   ```bash
+   npm start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## API Configuration
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Set `REACT_APP_API_URL` in your `.env` file to point to your FastAPI backend (default: `http://localhost:8000`).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Technologies
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# Demo
->>>>>>> f2d139afb5bb3b0c64fffabef51abc60f86d141e
+- **React 18**: Modern React with hooks
+- **React Router**: Client-side routing
+- **Tailwind CSS**: Utility-first styling
+- **Axios**: HTTP client for API calls
+- **Context API**: State management
